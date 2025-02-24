@@ -1,0 +1,58 @@
+---
+title: 'ブログをLaravelからNext.jsに移行'
+date: '2025-02-24'
+lastmod: '2025-02-24'
+tags: ['next-js', 'tailwind','laravel', 'ブログ']
+draft: false
+summary: '個人ブログのフレームワークをLaravelからNext.jsに移行しました。'
+images: ['/static/images/twitter-card.png']
+---
+
+## 導入
+
+個人ブログのフレームワークをNext.js（nextjs-starter-blog）に移行した，という話です。
+
+<TOCInline toc={props.toc} exclude="導入" />
+
+## 経緯
+
+![Laravel](/static/images/laravel.jpg)
+
+これまで個人開発のアプリを掲載するブログを「Laravel」で作成していました。CMSを使う方が遥かに楽だと重々承知していましたが，リンクなどを掲載するだけだったので，
+PHPのフレームワークの勉強も兼ねて採用しました。
+
+ただ，趣味で作成しているC#やPythonのアプリなどを同じサーバに配置し，同じドメインで管理しようとすると，Laravel側でファイル参照を拒否してしまい，かなり困っていました。
+
+解決方法がわからず，下記のようにLaravelのホーム画面をサブディレクトに割り当て，ドメインでのアクセス時にリダイレクトさせてホーム画面に誘導していました。
+
+〇〇〇.com/lrvl　←　Laravelのホーム画面
+
+〇〇〇.com/aaa　←　asp.net core のアプリ
+
+SEO対策も全くできていない状態で放置していたのですが，ようやく移行を決めました。
+
+## Tailwind CSS Blogについて
+
+<video controls>
+  <source
+    src="https://github-production-user-asset-6210df.s3.amazonaws.com/28362229/258559849-2124c81f-b99d-4431-839c-347e01a2616c.webm"
+    type="video/webm"
+  />
+</video>
+
+移行先はTailwind CSS Blog（Next.js + Typescript + Tailwind CSS）にしました。Next.jsにも慣れてきたこと，サンプルをほぼいじらずに使えそうなのが決め手です。
+
+導入は [Tailwind CSS Blogの導入手順](https://vercel.com/templates/next.js/tailwind-css-starter-blog) の通り。とても簡単です。①サンプルのmdxの削除，②画像の差し替え③各ページの不要なコンポーネントの削除（SNSなどのリンク）④ヘッダーのリンクの変更（下記コードに変更），くらいです。
+
+
+```ts:headerNavLinks.ts
+const headerNavLinks = [
+  { href: '/', title: 'ホーム' },
+  { href: '/projects', title: '作品' },
+  { href: '/about', title: 'ブログについて' },
+]
+
+export default headerNavLinks
+```
+
+ページ作成がかなり簡便になったので，今後は仕事で使っているツールや簡易プログラムの備忘録を記事でまとめていこうと思います。

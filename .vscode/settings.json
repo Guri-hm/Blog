@@ -1,0 +1,5 @@
+{
+  "editor.formatOnSave": false, //自動整形オフ
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
