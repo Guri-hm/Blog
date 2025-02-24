@@ -24,7 +24,6 @@ jobs:
         with:
           node-version: '20'
           cache: yarn
-      - id: configurepages
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -37,9 +36,6 @@ jobs:
         env:
           EXPORT: 1
           UNOPTIMIZED: 1
-          BASE_PATH: ${{ steps.configurepages.outputs.base_path }}
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: ./out
-#      - id: deployment
-#        uses: actions/deploy-pages@v4
+          BASE_PATH: /
+
+
