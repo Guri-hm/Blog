@@ -36,6 +36,6 @@ jobs:
         env:
           EXPORT: 1
           UNOPTIMIZED: 1
-          BASE_PATH: /
+          BASE_PATH: ''
 
 
