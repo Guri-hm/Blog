@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'ソロデブログ',
+  title: '黙々コードブログ',
   author: 'Guri H.',
-  headerTitle: 'ソロデブログ',
+  headerTitle: '黙々コードブログ',
   description: '個人で開発したアプリなどを掲載',
   language: 'ja',
   theme: 'system', // system, dark or light
