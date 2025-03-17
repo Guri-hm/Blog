@@ -1,4 +1,7 @@
 {
+  "http": 1,
+  "https": 1,
+  "iis": 1,
   "next-js": 1,
   "tailwind": 1,
   "laravel": 1,
